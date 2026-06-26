@@ -1,0 +1,211 @@
+table 'AI Job Market Dataset'
+	lineageTag: 75d86092-425a-48f1-8c11-289733b2ca8c
+
+	measure 'Total Jobs' = COUNTROWS('AI Job Market Dataset')
+		formatString: 0
+		lineageTag: ab853fd4-4609-4450-935f-d208663aa395
+
+	measure 'Avg Salary' = AVERAGE('AI Job Market Dataset'[salary])
+		lineageTag: e96d3566-5209-42bd-8190-7eea83e312d6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Max Salary' = MAX('AI Job Market Dataset'[salary])
+		formatString: 0
+		lineageTag: 8ac10933-cf51-4103-a372-a8606f8c60eb
+
+	measure 'Min Salary' = MIN('AI Job Market Dataset'[salary])
+		formatString: 0
+		lineageTag: 84d9dd57-30bd-4e7a-9915-5213d91367ee
+
+	column job_id
+		dataType: int64
+		formatString: 0
+		lineageTag: bd25b3f9-e884-4fde-b4fc-69563dd133fe
+		summarizeBy: sum
+		sourceColumn: job_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_title
+		dataType: string
+		lineageTag: 3ef02c61-8d17-4bf2-b31d-f47f91b6e5c1
+		summarizeBy: none
+		sourceColumn: job_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_size
+		dataType: string
+		lineageTag: 5d7ae5f3-2e39-42e1-9aca-a45f3ec9f65e
+		summarizeBy: none
+		sourceColumn: company_size
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_industry
+		dataType: string
+		lineageTag: c195ac11-fef3-45c9-bad2-77e4590cebdb
+		summarizeBy: none
+		sourceColumn: company_industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 17396ab9-7064-49b8-9569-74d78735ac82
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column remote_type
+		dataType: string
+		lineageTag: 900f5f89-ec4b-4d1d-b2cf-b29c7b89a3a1
+		summarizeBy: none
+		sourceColumn: remote_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column experience_level
+		dataType: string
+		lineageTag: 2dfef34d-8642-4dc6-8f22-d356dd8ac87f
+		summarizeBy: none
+		sourceColumn: experience_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column years_experience
+		dataType: int64
+		formatString: 0
+		lineageTag: f2394a62-9738-4d08-b213-2a7d94faef8d
+		summarizeBy: sum
+		sourceColumn: years_experience
+
+		annotation SummarizationSetBy = Automatic
+
+	column education_level
+		dataType: string
+		lineageTag: af393dae-c8d6-4d40-8f7e-ebed2d6f6aa8
+		summarizeBy: none
+		sourceColumn: education_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column skills_python
+		dataType: int64
+		formatString: 0
+		lineageTag: c195c78f-e191-4b67-a2a3-31fd9cdf06f0
+		summarizeBy: sum
+		sourceColumn: skills_python
+
+		annotation SummarizationSetBy = Automatic
+
+	column skills_sql
+		dataType: int64
+		formatString: 0
+		lineageTag: 9dc8adbb-7ce7-4ec1-989c-d9542379822b
+		summarizeBy: sum
+		sourceColumn: skills_sql
+
+		annotation SummarizationSetBy = Automatic
+
+	column skills_ml
+		dataType: int64
+		formatString: 0
+		lineageTag: aa6d36ad-6a34-432f-aae8-53e2c6091b20
+		summarizeBy: sum
+		sourceColumn: skills_ml
+
+		annotation SummarizationSetBy = Automatic
+
+	column skills_deep_learning
+		dataType: int64
+		formatString: 0
+		lineageTag: fc4e200b-7287-4a95-9cf7-e16bd9a1cb9e
+		summarizeBy: sum
+		sourceColumn: skills_deep_learning
+
+		annotation SummarizationSetBy = Automatic
+
+	column skills_cloud
+		dataType: int64
+		formatString: 0
+		lineageTag: fc9abebb-dd87-40aa-8811-9059f8ba053f
+		summarizeBy: sum
+		sourceColumn: skills_cloud
+
+		annotation SummarizationSetBy = Automatic
+
+	column salary
+		dataType: int64
+		formatString: 0
+		lineageTag: 3711477b-6342-4c24-82fc-dc97522fe524
+		summarizeBy: sum
+		sourceColumn: salary
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_posting_month
+		dataType: int64
+		formatString: 0
+		lineageTag: ffab30d4-4f34-48ef-93da-970ad67ed478
+		summarizeBy: sum
+		sourceColumn: job_posting_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_posting_year
+		dataType: int64
+		formatString: 0
+		lineageTag: c58a3385-279c-4901-ac56-c153b291377b
+		summarizeBy: sum
+		sourceColumn: job_posting_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column hiring_urgency
+		dataType: string
+		lineageTag: 4efbe490-7853-4550-9623-3668f8d05105
+		summarizeBy: none
+		sourceColumn: hiring_urgency
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_openings
+		dataType: int64
+		formatString: 0
+		lineageTag: 36a04330-8e53-4606-8c96-91b27de6fdad
+		summarizeBy: sum
+		sourceColumn: job_openings
+
+		annotation SummarizationSetBy = Automatic
+
+	column job_posting_month_name
+		dataType: string
+		lineageTag: e3c3be1a-bad6-4dd2-a78b-5b62fa859402
+		summarizeBy: none
+		sourceColumn: job_posting_month_name
+		sortByColumn: job_posting_month
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'AI Job Market Dataset' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\SAMARTH KASALKAR\OneDrive\Documents\Projects\Dashboard\AI Job Market\AI Job Market Dataset.xlsx"), null, true),
+				    #"AI Job Market Dataset_Sheet" = Source{[Item="AI Job Market Dataset",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"AI Job Market Dataset_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"job_id", Int64.Type}, {"job_title", type text}, {"company_size", type text}, {"company_industry", type text}, {"country", type text}, {"remote_type", type text}, {"experience_level", type text}, {"years_experience", Int64.Type}, {"education_level", type text}, {"skills_python", Int64.Type}, {"skills_sql", Int64.Type}, {"skills_ml", Int64.Type}, {"skills_deep_learning", Int64.Type}, {"skills_cloud", Int64.Type}, {"salary", Int64.Type}, {"job_posting_month", Int64.Type}, {"job_posting_year", Int64.Type}, {"hiring_urgency", type text}, {"job_openings", Int64.Type}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "job_posting_month_name", each Date.MonthName(#date(2025,[job_posting_month],1))),
+				    #"Sorted Rows" = Table.Sort(#"Added Custom",{{"job_posting_month", Order.Ascending}})
+				in
+				    #"Sorted Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
